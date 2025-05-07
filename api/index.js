@@ -15,11 +15,15 @@ app.use(express.json());
 app.use(cookieParser());
 
 // ✅ Fixed CORS
-app.use(cors({
+const corsOptions = {
   origin: ['http://localhost:5173', 'https://globalize.vercel.app'],
   credentials: true
-}));
+};
 
+app.use(cors(corsOptions));
+
+// ✅ Handle CORS preflight (important for Vercel serverless)
+app.options("*", cors(corsOptions));
 
 // API routes
 app.use('/api/auth', authRouter);
