@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "server": "nodemon index.js"
+    "start": "node api/index.js",
+    "server": "nodemon api/index.js"
   },
   "keywords": [],
   "author": "",
@@ -26,6 +26,7 @@
     "nodemailer": "^6.10.1",
     "nodemon": "^3.1.9",
     "react-toastify": "^11.0.5",
+    "serverless-http": "^3.2.0",
     "streamifier": "^0.1.1"
   }
 }
